@@ -71,6 +71,10 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if(!$this->userRepository->delete($id)){
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        return response()->json([], 204);
     }
 }
