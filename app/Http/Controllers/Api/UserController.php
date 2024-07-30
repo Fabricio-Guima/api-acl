@@ -43,7 +43,11 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        if( !$user = $this->userRepository->findById($id)){
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        return new UserResource($user);
     }
 
     /**
