@@ -15,7 +15,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/permissions', PermissionController::class);
 });
 
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'acl'])->group(function () {
     Route::get('/users/{user}/permissions', [PermissionUserController::class, 'getPermissionsOfUser'])->name('users.permissions');
     Route::post('/users/{user}/permissions-sync', [PermissionUserController::class, 'syncPermissionsOfUser'])->name('users.permissions.sync');
     Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
