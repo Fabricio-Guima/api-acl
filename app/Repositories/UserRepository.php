@@ -18,7 +18,9 @@ class UserRepository
     {
         return $this->user->when(!empty($filter), function ($query) use ($filter) {
             $query->where('name', 'LIKE', "%{$filter}%");
-        })->paginate($totalPerPage, ['*'], 'page', $page);
+        })
+        ->with(['permissions'])
+        ->paginate($totalPerPage, ['*'], 'page', $page);
     }
 
     public function createNew(CreateUserDTO $dto): User
@@ -30,7 +32,7 @@ class UserRepository
 
     public function findById(string $id): ?User
     {
-        return $this->user->find($id);
+        return $this->user->with(['permissions'])->find($id);
     }
 
     public function findByEmail(string $email): ?User
@@ -62,5 +64,22 @@ class UserRepository
         }
 
         return $user->delete();
+    }
+
+    public function syncPermissions(string $id, array $permissions): ?bool
+    {
+        if(!$user = $this->findById($id))
+        {
+            return null;
+        }
+
+        $user->permissions()->sync($permissions);
+
+        return true;
+    }
+
+    public function getPermissionsByUserId(string $user)
+    {
+        return $this->findById($user)->permissions()->get();
     }
 }
