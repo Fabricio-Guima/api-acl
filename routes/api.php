@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\api\Auth\AuthController;
+use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PermissionUserController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('auth:sanctum')->post('/me', [AuthController::class, 'me'])->name('auth.me');
+Route::middleware('auth:sanctum')->get('/me', [AuthController::class, 'me'])->name('auth.me');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
