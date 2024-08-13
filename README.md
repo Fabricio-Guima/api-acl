@@ -1,6 +1,7 @@
 # Projeto feito em laravel para associar determinadas permissões a um ou vários usuários
 O que você encontrará neste projeto:
 - Camada de repositório
+- Camada DTO
 - Criação de middleware para validar se ou usuário tem ou não tal permissão
 - Super admins tem controle total do sistema
 - CRUD de usuários
