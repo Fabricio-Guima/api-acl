@@ -91,6 +91,9 @@ composer require pestphp/pest --dev --with-all-dependencies
 ./vendor/bin/pest --init
 ```
 
+```sh
+composer require pestphp/pest-plugin-laravel --dev
+```
 Rodar os testes após serem feitos:
 ```sh
 ./vendor/bin/pest
