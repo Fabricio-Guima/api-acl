@@ -98,6 +98,16 @@ Rodar os testes após serem feitos:
 ```sh
 ./vendor/bin/pest
 ```
+Crie no arquivo "composer.json" um atalho para o comando "./vendor/bin/pest" dentro de scripts
+
+"test": [
+            "./vendor/bin/pest"
+        ]
+
+Agora em seu terminal será necessário rodar o comando abaixo para ver seus testes em ação:
+```sh
+composer test
+```
 
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
