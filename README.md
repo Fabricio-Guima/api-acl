@@ -1,4 +1,7 @@
-# Setup Docker Laravel 10 com PHP 8.1
+# Projeto feito em laravel para associar determinadas permissões a um ou vários usuários
+
+
+## Setup Docker Laravel 10 com PHP 8.1
 
 ### Passo a passo
 
