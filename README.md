@@ -81,5 +81,20 @@ Gere a key do projeto Laravel
 php artisan key:generate
 ```
 
+## Instalando o Pest para testar o código:
+```sh
+composer remove phpunit/phpunit
+composer require pestphp/pest --dev --with-all-dependencies
+```
+
+```sh
+./vendor/bin/pest --init
+```
+
+Rodar os testes após serem feitos:
+```sh
+./vendor/bin/pest
+```
+
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
