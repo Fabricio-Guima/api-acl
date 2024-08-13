@@ -1,5 +1,18 @@
 # Projeto feito em laravel para associar determinadas permissões a um ou vários usuários
-
+O que você encontrará neste projeto:
+- Camada de repositório
+- Criação de middleware para validar se ou usuário tem ou não tal permissão
+- Super admins tem controle total do sistema
+- CRUD de usuários
+- CRUD de permissões
+- Vincular N permissões a um usuário
+- Validação do que vem na request utilizando "request validation"
+- Formatar os dados de saída utilizando "resource"
+- utilização de "with" para carregar certos relacionamentos
+- utilização do load para carregar um certo relacionamento
+- Login/Logout
+- Recuperar informações do usuário pela rota "/me" caso o token dado esteja válido
+- Docker e alguns containers para o funcionamento do sistema
 
 ## Setup Docker Laravel 10 com PHP 8.1
 
